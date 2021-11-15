@@ -5,13 +5,11 @@
 
 using namespace std;
 
-char input[129];
-char inputIndex;
-
 #pragma warning(disable:4996)
 
 int main()
 {
+    char input[129];
     printf("Enter a string of at most 128 characters: ");
     scanf("%s", input);
     int len = strlen(input);
@@ -27,16 +25,16 @@ int main()
 
     char currentChar = input[0];
     int charCount = 1;
-    for (inputIndex = 1; inputIndex <= len; ++inputIndex)
+    for (int i = 0; i < len; ++i)
     {
-	    if(input[inputIndex] == currentChar || input[inputIndex] == EOF)
+	    if(input[i] == currentChar || input[i] == EOF)
 	    {
             charCount++;
 	    }
         else
         {
             printf("%i%c", charCount, currentChar);
-            currentChar = input[inputIndex];
+            currentChar = input[i];
             charCount = 1;
         }
     }
